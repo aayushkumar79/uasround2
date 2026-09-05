@@ -244,15 +244,13 @@ while True:
     else:
         break
 
-#Time taken
-time=((e0_distance/20)+(e1_distance/15)+(e2_distance/10)+(e3_distance/10))
-
 #Outputs
 coords=[c["center"] for c in casualties]
 priority_scores=[c["priority"] for c in casualties]
 e_levels=[c["elevation"] for c in casualties]
 ages=[c["age"] for c in casualties]
 severity=[c["severity"] for c in casualties]
+time=((e0_distance/20)+(e1_distance/15)+(e2_distance/10)+(e3_distance/10))
 
 print("Total number of casualties: ",len(casualties))
 print("Casualty coordinates: ",coords)
