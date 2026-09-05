@@ -5,7 +5,6 @@ import heapq
 
 img=cv2.imread("D:/ML/IMG-20260831-WA0026.jpg")
 output=img.copy()
-gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 hsv=cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
 #retval,otsu=cv2.threshold(gray,1,255,cv2.THRESH_OTSU)
 
@@ -98,8 +97,7 @@ for color_name,mask in masks:
             age_group={"circle":"Children","star":"Adults","square":"Senior Citizens"}
             severity={"red":"Critical","yellow":"Moderate","white":"Safe"}
             casualties.append({"center":(cX,cY),"priority":priority[color_name,shape],"age":age_group[shape],"severity":severity[color_name],"visited":False,"elevation":-1})
-
-        label=priority.get((color_name,shape),f"{color_name}{shape}")
+                  
         #cv2.drawContours(output,[cnt],-1,(0,255,0),2)
         #cv2.circle(output,(cX,cY),4,(0,0,0),-1)
 
